@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.serviceName }}-{{ .Values.numberOfServices }}
+  labels:
+    app: {{ .Values.serviceName }}-{{ .Values.numberOfServices }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Values.serviceName }}-{{ .Values.numberOfServices }}
+  template:
+    metadata:
+      name: {{ .Values.serviceName }}-{{ .Values.numberOfServices }}
+      labels:
+        app: {{ .Values.serviceName }}-{{ .Values.numberOfServices }}
+    spec:
+      hostname: micropod-{{ .Values.numberOfServices}}
+      subdomain: {{ .Values.serviceName }}-{{ .Values.numberOfServices }}
+      containers:
+      - name: {{ .Values.serviceName }}-{{ .Values.numberOfServices }}
+        image: {{ .Values.recvimg }}
+        env:
+        - name: MS_NAME
+          value: {{ $.Values.serviceName | quote}}
+        - name: JAGER_HOST
+          value: {{ $.Values.jager_host | quote}}
+        - name: JAGER_PORT
+          value: {{ $.Values.jager_port | quote}}
+        ports:
+        - containerPort: 5000

@@ -1,0 +1,42 @@
+{{- range untilStep 0 (int $.Values.numberOfServices) 1 }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{$.Values.serviceName}}-{{.}}
+  labels:
+    app: {{$.Values.serviceName}}-{{.}}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{$.Values.serviceName}}-{{.}}
+  template:
+    metadata:
+      name: {{$.Values.serviceName}}-{{.}}
+      labels:
+        app: {{$.Values.serviceName}}-{{.}}
+    spec:
+      hostname: micropod-{{.}}
+      subdomain: {{$.Values.serviceName}}-{{.}}
+      containers:
+      - name: {{$.Values.serviceName}}-{{.}}
+        image: {{ $.Values.msimg }} #localhost:5000/micro/ngin-curl
+        env:
+        - name: DELAY
+          value: {{ $.Values.delay | quote}}
+        - name: NEXT_HOP
+          value : {{ $.Values.serviceName}}-{{add . 1 }}  
+        # - name: FREQ
+        #   value: {{ $.Values.pktfreq | quote}}
+        # - name: SIZE
+        #   value: {{ $.Values.pktsize | quote}}
+        - name: MS_NAME
+          value: {{ $.Values.serviceName | quote}}
+        - name: JAGER_HOST
+          value: {{ $.Values.jager_host | quote}}
+        - name: JAGER_PORT
+          value: {{ $.Values.jager_port | quote}}
+        ports:
+        - containerPort: 5000
+{{- end }}

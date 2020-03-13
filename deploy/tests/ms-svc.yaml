@@ -1,0 +1,13 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: microserv-route-service
+spec:
+  hosts:
+  - msvc-1
+  http:
+  - route:
+    - destination:
+        host: msvc-2
+        port:
+            number: 5000

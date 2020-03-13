@@ -1,0 +1,10 @@
+1. Test connectivity from ms0 to ms1:
+	nslookup msvc-1
+2. Test http from ms0 to ms1:
+	curl -X POST http://$NEXT_HOP:5000
+
+3. Test if jaeger works:
+	curl http://localhost:16686/api/traces?service=msvc
+
+Crate payload file of size
+	mkfile 1K 1K.payload

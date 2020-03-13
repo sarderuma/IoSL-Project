@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sender
+  labels:
+    app: sender
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sender
+  template:
+    metadata:
+      name: sender
+      labels:
+        app: sender
+    spec:
+      hostname: senderpod
+      subdomain: sender
+      containers:
+      - name: sender
+        image: {{.Values.senderimg}}
+        env:
+        - name: DELAY
+          value: {{ $.Values.delay | quote}}
+        - name: NEXT_HOP
+          value: {{.Values.serviceName}}-0  #http://msvc-0:5000
+        # - name: FREQ
+        #   value:  {{.Values.pktfreq | quote}}
+        # - name: SIZE
+        #   value: {{.Values.pktsize | quote}}
+        - name: MS_NAME
+          value: {{ $.Values.serviceName | quote}}
+        - name: JAGER_HOST
+          value: {{ $.Values.jager_host | quote}}
+        - name: JAGER_PORT
+          value: {{ $.Values.jager_port | quote}}
+        ports:
+        - containerPort: 5000

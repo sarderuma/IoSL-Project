@@ -1,0 +1,327 @@
+{
+    "data": [
+        {
+            "traceID": "5c8f0905a1b706e8",
+            "spans": [
+                {
+                    "traceID": "5c8f0905a1b706e8",
+                    "spanID": "3096462f5173847e",
+                    "flags": 1,
+                    "operationName": "from-client",
+                    "references": [],
+                    "startTime": 1575910949975540,
+                    "duration": 25130856,
+                    "tags": [
+                        {
+                            "key": "response",
+                            "type": "string",
+                            "value": "OK"
+                        },
+                        {
+                            "key": "sampler.param",
+                            "type": "bool",
+                            "value": true
+                        },
+                        {
+                            "key": "sampler.type",
+                            "type": "string",
+                            "value": "const"
+                        },
+                        {
+                            "key": "span.kind",
+                            "type": "string",
+                            "value": "server"
+                        }
+                    ],
+                    "logs": [],
+                    "processID": "p1",
+                    "warnings": null
+                },
+                {
+                    "traceID": "5c8f0905a1b706e8",
+                    "spanID": "b0f0b14a24527d61",
+                    "flags": 1,
+                    "operationName": "get-ms-delay",
+                    "references": [
+                        {
+                            "refType": "CHILD_OF",
+                            "traceID": "5c8f0905a1b706e8",
+                            "spanID": "3096462f5173847e"
+                        }
+                    ],
+                    "startTime": 1575910959980067,
+                    "duration": 5059082,
+                    "tags": [
+                        {
+                            "key": "http.url",
+                            "type": "string",
+                            "value": "http://localhost:8081/getmsdelay"
+                        },
+                        {
+                            "key": "span.kind",
+                            "type": "string",
+                            "value": "client"
+                        },
+                        {
+                            "key": "http.method",
+                            "type": "string",
+                            "value": "GET"
+                        }
+                    ],
+                    "logs": [
+                        {
+                            "timestamp": 1575910965039023,
+                            "fields": [
+                                {
+                                    "key": "delay",
+                                    "type": "string",
+                                    "value": "10"
+                                },
+                                {
+                                    "key": "hostname",
+                                    "type": "string",
+                                    "value": "ms.com.nsa"
+                                },
+                                {
+                                    "key": "ip",
+                                    "type": "string",
+                                    "value": "http://localhost:8085"
+                                }
+                            ]
+                        }
+                    ],
+                    "processID": "p1",
+                    "warnings": null
+                },
+                {
+                    "traceID": "5c8f0905a1b706e8",
+                    "spanID": "90132047239eb44f",
+                    "flags": 1,
+                    "operationName": "get_ms_delay",
+                    "references": [
+                        {
+                            "refType": "CHILD_OF",
+                            "traceID": "5c8f0905a1b706e8",
+                            "spanID": "b0f0b14a24527d61"
+                        }
+                    ],
+                    "startTime": 1575910960011891,
+                    "duration": 5008827,
+                    "tags": [
+                        {
+                            "key": "span.kind",
+                            "type": "string",
+                            "value": "server"
+                        }
+                    ],
+                    "logs": [],
+                    "processID": "p2",
+                    "warnings": null
+                },
+                {
+                    "traceID": "5c8f0905a1b706e8",
+                    "spanID": "d2e57d0934da8cd8",
+                    "flags": 1,
+                    "operationName": "get-ms-ip",
+                    "references": [
+                        {
+                            "refType": "CHILD_OF",
+                            "traceID": "5c8f0905a1b706e8",
+                            "spanID": "3096462f5173847e"
+                        }
+                    ],
+                    "startTime": 1575910965040274,
+                    "duration": 5015743,
+                    "tags": [
+                        {
+                            "key": "http.method",
+                            "type": "string",
+                            "value": "GET"
+                        },
+                        {
+                            "key": "http.url",
+                            "type": "string",
+                            "value": "http://localhost:8081/getip"
+                        },
+                        {
+                            "key": "span.kind",
+                            "type": "string",
+                            "value": "client"
+                        }
+                    ],
+                    "logs": [
+                        {
+                            "timestamp": 1575910970055914,
+                            "fields": [
+                                {
+                                    "key": "hostname",
+                                    "type": "string",
+                                    "value": "ms.com.nsa"
+                                },
+                                {
+                                    "key": "ip",
+                                    "type": "string",
+                                    "value": "http://localhost:8085"
+                                }
+                            ]
+                        }
+                    ],
+                    "processID": "p1",
+                    "warnings": null
+                },
+                {
+                    "traceID": "5c8f0905a1b706e8",
+                    "spanID": "167c2a23fbbfc55e",
+                    "flags": 1,
+                    "operationName": "get_ip",
+                    "references": [
+                        {
+                            "refType": "CHILD_OF",
+                            "traceID": "5c8f0905a1b706e8",
+                            "spanID": "d2e57d0934da8cd8"
+                        }
+                    ],
+                    "startTime": 1575910965047101,
+                    "duration": 5002460,
+                    "tags": [
+                        {
+                            "key": "span.kind",
+                            "type": "string",
+                            "value": "server"
+                        }
+                    ],
+                    "logs": [],
+                    "processID": "p2",
+                    "warnings": null
+                },
+                {
+                    "traceID": "5c8f0905a1b706e8",
+                    "spanID": "74071236201e9282",
+                    "flags": 1,
+                    "operationName": "call-other-microservice-ip",
+                    "references": [
+                        {
+                            "refType": "CHILD_OF",
+                            "traceID": "5c8f0905a1b706e8",
+                            "spanID": "3096462f5173847e"
+                        }
+                    ],
+                    "startTime": 1575910970057085,
+                    "duration": 5048877,
+                    "tags": [
+                        {
+                            "key": "http.method",
+                            "type": "string",
+                            "value": "POST"
+                        },
+                        {
+                            "key": "http.url",
+                            "type": "string",
+                            "value": "http://localhost:8085/from-previous-ms"
+                        },
+                        {
+                            "key": "span.kind",
+                            "type": "string",
+                            "value": "server"
+                        }
+                    ],
+                    "logs": [],
+                    "processID": "p1",
+                    "warnings": null
+                },
+                {
+                    "traceID": "5c8f0905a1b706e8",
+                    "spanID": "a4f17a5f8fbef07f",
+                    "flags": 1,
+                    "operationName": "from_previous_ms",
+                    "references": [
+                        {
+                            "refType": "CHILD_OF",
+                            "traceID": "5c8f0905a1b706e8",
+                            "spanID": "74071236201e9282"
+                        }
+                    ],
+                    "startTime": 1575910970086939,
+                    "duration": 5003657,
+                    "tags": [
+                        {
+                            "key": "span.kind",
+                            "type": "string",
+                            "value": "server"
+                        }
+                    ],
+                    "logs": [],
+                    "processID": "p3",
+                    "warnings": null
+                }
+            ],
+            "processes": {
+                "p1": {
+                    "serviceName": "microservice_sa_5G",
+                    "tags": [
+                        {
+                            "key": "hostname",
+                            "type": "string",
+                            "value": "client-141-23-129-202.wlan.tu-berlin.de"
+                        },
+                        {
+                            "key": "ip",
+                            "type": "string",
+                            "value": "141.23.129.202"
+                        },
+                        {
+                            "key": "jaeger.version",
+                            "type": "string",
+                            "value": "Python-4.1.0"
+                        }
+                    ]
+                },
+                "p2": {
+                    "serviceName": "config",
+                    "tags": [
+                        {
+                            "key": "hostname",
+                            "type": "string",
+                            "value": "client-141-23-129-202.wlan.tu-berlin.de"
+                        },
+                        {
+                            "key": "ip",
+                            "type": "string",
+                            "value": "141.23.129.202"
+                        },
+                        {
+                            "key": "jaeger.version",
+                            "type": "string",
+                            "value": "Python-4.1.0"
+                        }
+                    ]
+                },
+                "p3": {
+                    "serviceName": "ms_01",
+                    "tags": [
+                        {
+                            "key": "hostname",
+                            "type": "string",
+                            "value": "client-141-23-129-202.wlan.tu-berlin.de"
+                        },
+                        {
+                            "key": "ip",
+                            "type": "string",
+                            "value": "141.23.129.202"
+                        },
+                        {
+                            "key": "jaeger.version",
+                            "type": "string",
+                            "value": "Python-4.1.0"
+                        }
+                    ]
+                }
+            },
+            "warnings": null
+        }
+    ],
+    "total": 0,
+    "limit": 0,
+    "offset": 0,
+    "errors": null
+}

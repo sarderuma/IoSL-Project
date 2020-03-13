@@ -1,0 +1,58 @@
+{
+  "kind": "PodMetricsList",
+  "apiVersion": "metrics.k8s.io/v1beta1",
+  "metadata": {
+    "selfLink": "/apis/metrics.k8s.io/v1beta1/namespaces/default/pods"
+  },
+  "items": [
+    {
+      "metadata": {
+        "name": "jkl-0-5c6f9687f9-9psk4",
+        "namespace": "default",
+        "selfLink": "/apis/metrics.k8s.io/v1beta1/namespaces/default/pods/jkl-0-5c6f9687f9-9psk4",
+        "creationTimestamp": "2019-12-10T10:11:20Z"
+      },
+      "timestamp": "2019-12-10T10:10:19Z",
+      "window": "30s",
+      "containers": [
+        {
+          "name": "jkl-0",
+          "usage": {
+            "cpu": "14441267n",
+            "memory": "48156Ki"
+          }
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "name": "jkl-1-66d6f77595-hdzzw",
+        "namespace": "default",
+        "selfLink": "/apis/metrics.k8s.io/v1beta1/namespaces/default/pods/jkl-1-66d6f77595-hdzzw",
+        "creationTimestamp": "2019-12-10T10:11:20Z"
+      },
+      "timestamp": "2019-12-10T10:10:17Z",
+      "window": "30s",
+      "containers": [
+        {
+          "name": "jkl-1",
+          "usage": {
+            "cpu": "13402384n",
+            "memory": "39864Ki"
+          }
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "name": "sender-6c4f8b4bbc-rcfql",
+        "namespace": "default",
+        "selfLink": "/apis/metrics.k8s.io/v1beta1/namespaces/default/pods/sender-6c4f8b4bbc-rcfql",
+        "creationTimestamp": "2019-12-10T10:11:20Z"
+      },
+      "timestamp": null,
+      "window": "30s",
+      "containers": []
+    }
+  ]
+}

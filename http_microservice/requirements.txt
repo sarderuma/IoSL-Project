@@ -1,0 +1,5 @@
+requests
+flask
+jaeger-client>=4,<5
+opentracing_instrumentation>=3.0.1,<4
+-e git+https://github.com/opentracing-contrib/python-flask.git@0.3.0#egg=flask_opentracing

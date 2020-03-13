@@ -1,0 +1,13 @@
+serviceName: msvc
+numberOfServices: 2
+delay: 1
+pktfreq: 1
+pktsize: 1
+jager_host: jaeger
+jager_port: 6831
+senderimg: iosl/http_dummy_sender:1.0
+msimg: iosl/http_microservice:2.0
+recvimg: iosl/recevier:2.0
+replicaCount: 1
+imagePullPolicy: IfNotPresent
+nodeSelector: {}
