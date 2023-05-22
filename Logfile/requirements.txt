@@ -1,4 +1,4 @@
-requests==2.21.0
+requests==2.31.0
 kubernetes==10.0.1
 wxPython==4.0.7.post2
 dash==1.7.0
